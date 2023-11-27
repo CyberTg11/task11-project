@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { useState } from 'react';
 function App() {
+  const [num,setNum] = useState(0)
+  function myFunc(e){
+    setNum(num+1)
+    console.log(num+1)
+  }
+  function myFunc1(e){
+    setNum(num-1)
+    console.log(num-1)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='counterDiv'>
+        <h2>Number counter</h2>
+        <section>
+        <button onClick={myFunc1}>-</button>
+        <span>{num}</span> 
+        <button onClick={myFunc}>+</button>
+        </section>
+      </div>
   );
 }
 
